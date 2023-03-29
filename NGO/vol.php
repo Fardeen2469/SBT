@@ -34,7 +34,7 @@ require_once "header.php";
 
                 <?php
 
-                $sql = "SELECT * FROM `vol`";
+                $sql = "SELECT * FROM `addvol`";
                 $result = mysqli_query($link, $sql);
                 $num = mysqli_num_rows($result);
                 if ($num > 0) {
@@ -48,12 +48,12 @@ require_once "header.php";
                                 echo $i;
                                 ?>
                             </td>
-                            <td><?php echo $row['VolName']; ?></td>
-                            <td><?php echo $row['VolDeg']; ?></td>
-                            <td><?php echo $row['VolImg']; ?></td>
+                            <td><?php echo $row['v_name']; ?></td>
+                            <td><?php echo $row['v_deg']; ?></td>
+                            <td><img src="<?php echo $row['v_img']; ?>" width="80px" height="80px" alt=""></td>
                             
-                            <td><a href="eupdate.php?id=<?php echo $row['e_id']; ?>" class="text-decoration-none fw-bold link-success"><i class="fa fa-pencil" aria-hidden="true"></i>Edit</a>
-                                <a href="dltevent.php?id=<?php echo $row['e_id']; ?>" class="fw-bold text-danger ms-3 text-decoration-underline "><i class="fa fa-trash" aria-hidden="true"></i>Delete</a>
+                            <td><a href="vupdate.php?id=<?php echo $row['v_id']; ?>" class="text-decoration-none fw-bold link-success"><i class="fa fa-pencil" aria-hidden="true"></i>Edit</a>
+                                <a href="dltvol.php?id=<?php echo $row['v_id']; ?>" class="fw-bold text-danger ms-3 text-decoration-underline "><i class="fa fa-trash" aria-hidden="true"></i>Delete</a>
                             </td>
                         </tr>
                 <?php
