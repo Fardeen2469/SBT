@@ -169,57 +169,71 @@ require_once "header.php";
 
 <body>
 
-    <form action="vupdateb.php" method="post" enctype="multipart/form-data">
-        <h1>Update hear:</h1>
+    <form action="smb.php" method="post">
+        <h1>Social Media Details hear:</h1>
 
         <div class="contentform">
             <!-- <div id="sendmessage"> Your message has been sent successfully. Thank you. </div> -->
 
             <?php
-            // include 'connect.php';
-            $edt_id = $_GET['id'];
-            $sql = "SELECT * FROM addvol WHERE v_id={$edt_id}";
-            $result = mysqli_query($link, $sql);
-            if (mysqli_num_rows($result) > 0) {
-                while ($row = mysqli_fetch_assoc($result)) {
+                            $sql = "SELECT * FROM `social`";
+                            $resultt = mysqli_query($link, $sql);
+                            $numm = mysqli_num_rows($resultt);
+                            if ($numm > 0) {
+                                for ($i = 1; $i <= $numm; $i++) {
+                                    $roww = mysqli_fetch_assoc($resultt);
 
-                    ?>
-                    <div class="leftcontact">
-                        <div class="form-group">
-                            <p>Volenter Name<span>*</span></p>
-                            <span class="icon-case"><i class="fa fa-male"></i></span>
-                            <input type="hidden" name="e_id" id="e_id" value="<?php echo $row['v_id']; ?>" required />
-                            <input type="text" name="name" id="VolName" value="<?php echo $row['v_name']; ?>" required />
-                            <div class="validation"></div>
-                        </div>
+                                    ?>
 
-                        <div class="form-group">
-                            <p>Deg <span>*</span></p>
-                            <span class="icon-case"><i class="fa fa-user"></i></span>
-                            <input type="text" name="deg" id="VolDeg" value="<?php echo $row['v_deg']; ?>" required />
-                            <div class="validation"></div>
-                        </div>
-
-                        <!-- <div class="form-group">
-                    <p>time <span>*</span></p>
-                    <span class="icon-case"><i class="fa fa-envelope-o"></i></span>
-                    <input type="" name="img" id="VolImg" required />
+            <div class="leftcontact">
+                <div class="form-group">
+                    <p>Number <span>*</span></p>
+                    <span class="icon-case"><i class="fa fa-male"></i></span>
+                    <input type="text" name="s_number" value="<?php echo $roww['s_number']; ?>" id="s_number"  />
                     <div class="validation"></div>
-                </div> -->
-                    </div>
+                </div>
 
-                    <div class="rightcontact">
-                        <div class="form-group">
-                            <p>Volenter image <span>*</span></p>
-                            <!-- <span class="icon-case"><i class="fa fa-comments-o"></i></span> -->
-                            <input type="file" name="image"  /> <img src="<?php echo $row['v_img']; ?>" width="80px" height="80px" alt=""><br>
-                            <div class="validation"></div>
-                        </div>
-                    </div>
-                <?php }
-            } ?>
-            <button type="submit" class="bouton-contact" name="done">Done</button>
+                <div class="form-group">
+                    <p>Email <span>*</span></p>
+                    <span class="icon-case"><i class="fa fa-user"></i></span>
+                    <input type="text" name="s_email" value="<?php echo $roww['s_email']; ?>" id="s_email"  />
+                    <div class="validation"></div>
+                </div>
+
+                <div class="form-group">
+                    <p>Twiter <span>*</span></p>
+                    <span class="icon-case"><i class="fa fa-user"></i></span>
+                    <input type="text" name="s_twiter" value="<?php echo $roww['s_twiter']; ?>" id="s_twiter"  />
+                    <div class="validation"></div>
+                </div>
+            </div>
+            <div class="rightcontact">
+                <div class="form-group">
+                    <p>FaceBook <span>*</span></p>
+                    <span class="icon-case"><i class="fa fa-comments-o"></i></span>
+                    <input type="text" name="s_face" value="<?php echo $roww['s_fb']; ?>" id="s_face"  />
+                    <div class="validation"></div>
+                </div>
+
+                <div class="form-group">
+                    <p>Linkdeen <span>*</span></p>
+                    <span class="icon-case"><i class="fa fa-building-o"></i></span>
+                    <input type="text" name="s_li" value="<?php echo $roww['s_ld']; ?>" id="s_li"  />
+                    <div class="validation"></div>
+                </div>
+
+                <div class="form-group">
+                    <p>Instagram <span>*</span></p>
+                    <span class="icon-case"><i class="fa fa-user"></i></span>
+                    <input type="text" name="s_insta" value="<?php echo $roww['s_insta']; ?>" id="s_insta"  />
+                    <div class="validation"></div>
+                </div>
+            </div>
         </div>
+        </div>
+        <button type="submit" class="bouton-contact">Done</button>
+    <?php } } 
+?>
     </form>
 
 

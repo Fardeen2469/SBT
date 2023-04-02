@@ -169,55 +169,44 @@ require_once "header.php";
 
 <body>
 
-    <form action="vupdateb.php" method="post" enctype="multipart/form-data">
-        <h1>Update hear:</h1>
+    <form action="addimgb.php" method="post" enctype="multipart/form-data">
+        <h1>Add hear:</h1>
 
         <div class="contentform">
             <!-- <div id="sendmessage"> Your message has been sent successfully. Thank you. </div> -->
 
-            <?php
-            // include 'connect.php';
-            $edt_id = $_GET['id'];
-            $sql = "SELECT * FROM addvol WHERE v_id={$edt_id}";
-            $result = mysqli_query($link, $sql);
-            if (mysqli_num_rows($result) > 0) {
-                while ($row = mysqli_fetch_assoc($result)) {
 
-                    ?>
-                    <div class="leftcontact">
-                        <div class="form-group">
-                            <p>Volenter Name<span>*</span></p>
-                            <span class="icon-case"><i class="fa fa-male"></i></span>
-                            <input type="hidden" name="e_id" id="e_id" value="<?php echo $row['v_id']; ?>" required />
-                            <input type="text" name="name" id="VolName" value="<?php echo $row['v_name']; ?>" required />
-                            <div class="validation"></div>
-                        </div>
+            <!-- <div class="leftcontact">
+                <div class="form-group">
+                    <p>Volenter Name<span>*</span></p>
+                    <span class="icon-case"><i class="fa fa-male"></i></span>
+                    <input type="text" name="name" id="VolName" required />
+                    <div class="validation"></div>
+                </div>
 
-                        <div class="form-group">
-                            <p>Deg <span>*</span></p>
-                            <span class="icon-case"><i class="fa fa-user"></i></span>
-                            <input type="text" name="deg" id="VolDeg" value="<?php echo $row['v_deg']; ?>" required />
-                            <div class="validation"></div>
-                        </div>
+                <div class="form-group">
+                    <p>Deg <span>*</span></p>
+                    <span class="icon-case"><i class="fa fa-user"></i></span>
+                    <input type="text" name="deg" id="VolDeg" required />
+                    <div class="validation"></div>
+                </div> -->
 
-                        <!-- <div class="form-group">
+                <!-- <div class="form-group">
                     <p>time <span>*</span></p>
                     <span class="icon-case"><i class="fa fa-envelope-o"></i></span>
                     <input type="" name="img" id="VolImg" required />
                     <div class="validation"></div>
                 </div> -->
-                    </div>
+            </div>
 
-                    <div class="rightcontact">
-                        <div class="form-group">
-                            <p>Volenter image <span>*</span></p>
-                            <!-- <span class="icon-case"><i class="fa fa-comments-o"></i></span> -->
-                            <input type="file" name="image"  /> <img src="<?php echo $row['v_img']; ?>" width="80px" height="80px" alt=""><br>
-                            <div class="validation"></div>
-                        </div>
-                    </div>
-                <?php }
-            } ?>
+            <div class="leftcontact">
+                <div class="form-group">
+                    <p class="ms-4"> image <span>*</span></p>
+                    <!-- <span class="icon-case"><i class="fa fa-comments-o"></i></span> -->
+                    <input type="file" name="image" id="" />
+                    <div class="validation"></div>
+                </div>
+            </div>
             <button type="submit" class="bouton-contact" name="done">Done</button>
         </div>
     </form>

@@ -13,5 +13,7 @@ if(isset($_POST['done'])){
     $qry = "INSERT INTO `addvol`(`v_name`, `v_deg`, `v_img`) VALUES ('$vname','$vdeg','$img_des');";
     echo $qry;
     $result =mysqli_query($link,$qry) or die("quary unsuccessful") ;
+header("location:vol.php?err=1");
+
 }
 ?>

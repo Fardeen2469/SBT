@@ -5,6 +5,15 @@ $edt_id = $_POST['e_id'];
 $vname = $_POST['name'];
 $vdeg = $_POST['deg'];
 $img = $_FILES['image'];
+
+if ($img == "") {
+    $sql = "SELECT * FROM addvol WHERE v_id={$edt_id}";
+    $result = mysqli_query($link, $sql);
+    $row = mysqli_fetch_assoc($result);
+    while ($row = mysqli_fetch_assoc($result)) {
+        $img = $row['v_img'];
+    }
+}
 print_r($_FILES['image']);
 $img_loc = $_FILES['image']['tmp_name'];
 $img_name = $_FILES['image']['name'];

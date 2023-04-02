@@ -12,7 +12,7 @@ if(empty($_SESSION['user'])){
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Orphanage Management System</title>
+    <title>SBT</title>
     <link rel="icon" href="assets/images/logo-140x140.jpg" type="image/png">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha256-Sk3nkD6mLTMOF0EOpNtsIry+s1CsaqQC1rVLTAy+0yc= sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
@@ -23,6 +23,38 @@ if(empty($_SESSION['user'])){
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <script>
+       $(document).ready(function() {
+            toastr.options = {
+                'closeButton': false,
+                'debug': false,
+                'newestOnTop': false,
+                'progressBar': false,
+                'positionClass': 'toast-bottom-right',
+                'preventDuplicates': false,
+                'showDuration': '1000',
+                'hideDuration': '1000',
+                'timeOut': '3000',
+                'extendedTimeOut': '1000',
+                'showEasing': 'swing',
+                'hideEasing': 'linear',
+                'showMethod': 'fadeIn',
+                'hideMethod': 'fadeOut',
+            }
+        });
+
+        function successtoast(msg) {
+            toastr.options.closeButton = true,
+                toastr.options.progressBar = true,
+                toastr.options.positionClass = 'toast-bottom-right',
+                toastr.success(msg);
+        }
+
+        function errortoast(msg) {
+            toastr.options.closeButton = true,
+                toastr.options.progressBar = true,
+                toastr.options.positionClass = 'toast-bottom-right',
+                toastr.error('msg');
+        }
     $(document).ready(function(){
         $('#example').DataTable();
     });
@@ -86,6 +118,8 @@ if(empty($_SESSION['user'])){
                      <li role="presentation"><a href="">Add News</a></li>
                      <li role="presentation"><a href="event.php">Event</a></li>
                      <li role="presentation"><a href="vol.php">Volunteers</a></li>
+                     <li role="presentation"><a href="gal.php">Gallary</a></li>
+                     <li role="presentation"><a href="sm.php">Social Media</a></li>
 
                      
                      <!-- <li role="presentation"><a href="admin.php">Dashboard</a></li>
