@@ -621,7 +621,11 @@ include 'NGO/connect.php';
                                         <div class="event-content">
                                             <div class="event-meta">
                                                 <p><i class="fa fa-calendar-alt"></i>
-                                                    <?php echo $row['e_date'] ?>
+
+                                                    <?php
+                                                    echo substr($row['e_date'], 8, 2) . "-" . substr($row['e_date'], 5, 2) . "-" . substr($row['e_date'], 0, 4) ?>
+
+                                                    <!-- echo $row['e_date'] ?> -->
                                                 </p>
                                                 <p><i class="far fa-clock"></i>
                                                     <?php echo $row['e_time'] ?>

@@ -14,6 +14,7 @@ if(empty($_SESSION['user'])){
 
     <title>SBT</title>
     <link rel="icon" href="assets/images/logo-140x140.jpg" type="image/png">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha256-Sk3nkD6mLTMOF0EOpNtsIry+s1CsaqQC1rVLTAy+0yc= sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet" integrity="sha256-MfvZlkHCEqatNoGiOXveE8FIwMzZg4W85qfrfIFBfYc= sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
@@ -115,11 +116,12 @@ if(empty($_SESSION['user'])){
             <div class ="col-md-3 navbar">
                  <ul class="nav nav-pills nav-stacked">
                     <li role="presentation"><a href="">Dashboard</a></li>
-                     <li role="presentation"><a href="">Add News</a></li>
+                     <li role="presentation"><a href="news.php">Add News</a></li>
                      <li role="presentation"><a href="event.php">Event</a></li>
                      <li role="presentation"><a href="vol.php">Volunteers</a></li>
                      <li role="presentation"><a href="gal.php">Gallary</a></li>
                      <li role="presentation"><a href="sm.php">Social Media</a></li>
+                     <li role="presentation"><a href="loc.php">Other</a></li>
 
                      
                      <!-- <li role="presentation"><a href="admin.php">Dashboard</a></li>
